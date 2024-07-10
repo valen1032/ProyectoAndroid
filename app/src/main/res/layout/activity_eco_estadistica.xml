@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EcoEstadistica">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estadisticas!"
+        android:textAlignment="center"
+        android:textColor="#009688"
+        android:textSize="28dp"
+        android:layout_margin="11dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="206dp" />
+    <ImageButton
+        android:id="@+id/Buttonback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#EAECEF"
+        android:contentDescription="TODO"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/icon_arrow_green"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="492dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

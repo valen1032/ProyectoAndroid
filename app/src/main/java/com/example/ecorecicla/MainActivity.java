@@ -1,24 +1,59 @@
 package com.example.ecorecicla;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 public class MainActivity extends AppCompatActivity {
+   ImageButton Catbtn1;
+    ImageButton Estbtn2;
+    ImageButton Blogbtn3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        Catbtn1 = findViewById(R.id.ecobtn1);
+        Estbtn2 = findViewById(R.id.ecobtn2);
+        Blogbtn3 = findViewById(R.id.ecobtn3);
+        Catbtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, EcoCategoria.class);
+                startActivity(i);
+                finish();
+
+            }
         });
+
+        Estbtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, EcoEstadistica.class);
+                startActivity(i);
+                finish();
+
+            }
+        });
+
+        Blogbtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(MainActivity.this, EcoBlog.class);
+                startActivity(i);
+                finish();
+
+            }
+        });
+
+
+
     }
 }
