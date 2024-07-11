@@ -1,11 +1,15 @@
 package com.example.ecorecicla;
 
 
-import android.database.Cursor;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.models.DatabaseManager;
+import com.views.UserFormHelper;
+
 
 public class MainActivity extends AppCompatActivity {
     private DatabaseManager dbManager;
@@ -13,26 +17,30 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.user_register);
+        // Crear una instancia de UserFormHelper
+        UserFormHelper userFormHelper = new UserFormHelper(this);
 
-        dbManager = new DatabaseManager(this);
+        // Configurar el clic del botón verUserButton
+        Button verUserButton = findViewById(R.id.verUserButton);
+        verUserButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Abrir ListUserActivity
+                Intent intent = new Intent(MainActivity.this, ListUserActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        // Insertar usuario
-        dbManager.insertUser("Diana Carolina", "Mesa Niño", "52922518", "dianacmesa@gmail.com", "525317", "123458");
-
-        // Obtener usuarios
-        Cursor cursor = dbManager.getUsers();
-        if (cursor.moveToFirst()) {
-            do {
-                int id = cursor.getInt(0);
-                String name = cursor.getString(1);
-                String email = cursor.getString(2);
-
-                // Mostrar datos en un TextView
-                TextView textView = findViewById(R.id.textView);
-                textView.append("ID: " + id + ", Name: " + name + ", Email: " + email + "\n");
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
+        // Configurar el clic del botón loginButton
+        Button loginButton = findViewById(R.id.loginButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Abrir LoginActivity
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

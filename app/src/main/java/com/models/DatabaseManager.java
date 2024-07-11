@@ -24,6 +24,7 @@ public class DatabaseManager {
         values.put("email", email);
         values.put("telefono", telefono);
         values.put("password", password);
+        values.put("rol", "user");
 
 
         return database.insert("users", null, values);
