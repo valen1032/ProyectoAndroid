@@ -60,10 +60,24 @@
             android:background="@drawable/button_background_gray"
             android:backgroundTint="#4a7d41"
             android:padding="10dp"
-            android:text="Registrar"
+            android:text="Iniciar Sesión"
             android:minHeight="48dp"
             android:textColor="@android:color/white"
              />
+
+        <Button
+            android:id="@+id/irRegisterButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_background_gray"
+            android:backgroundTint="#A7C495"
+            android:padding="10dp"
+            android:text="Registrarme"
+            android:minHeight="48dp"
+            android:textColor="@android:color/white"
+            />
+
 
         <TextView
             android:id="@+id/forgotPasswordLink"
