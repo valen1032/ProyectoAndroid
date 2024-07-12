@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">EcoRecicla</string>
+    <string name="descripReforest">La reforestación se levanta como el pilar fundamental para construir un mundo donde la armonía entre la actividad humana y la naturaleza sea la clave de una convivencia duradera y sostenible</string>
+    <string name="descripAgua">El acceso al agua potable es fundamental para poder comer, lavarse o beber. La gestión sostenible de los recursos hídricos ayuda a gestionar de forma más adecuada la producción de alimentos, de energía, y contribuye al trabajo justo y al crecimiento económico.</string>
+    <string name="hint_material">Material a registrar</string>
+    <string name="hint_cantidad">Cantidad</string>
+    <string name="hint_descripcion">Descripción</string>
+    <string name="button_add">Añadir nuevo</string>
 </resources>

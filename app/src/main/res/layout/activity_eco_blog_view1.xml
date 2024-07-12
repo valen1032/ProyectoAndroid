@@ -10,7 +10,7 @@
     tools:context=".EcoCategoria">
 
     <ImageButton
-        android:id="@+id/Buttonbackest"
+        android:id="@+id/Buttonback"
         android:layout_width="69dp"
         android:layout_height="51dp"
         android:background="#4CAF50"
@@ -39,8 +39,17 @@
             android:layout_gravity="end"
             tools:layout_editor_absoluteY="8dp" />
 
-
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reforestación"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:layout_margin="11dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="206dp" />
         <android.support.v7.widget.CardView
             android:id="@+id/ItemcatH"
             android:layout_width="345dp"
@@ -59,54 +68,36 @@
                 android:orientation="vertical"
                 tools:ignore="UseCompoundDrawables">
 
-                <TextView
-                    android:id="@+id/ecoReg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:textAlignment="center"
-                    android:text="Estadísticas "
-                    android:textColor="#FFFFFF"
-                    android:textSize="25sp"
-                    android:background="#2A2D32CC"/>
-
-
                 <ImageView
                     android:id="@+id/ivest1"
                     android:layout_width="331dp"
                     android:layout_height="192dp"
-                    android:src="@drawable/graficaest"
+                    android:src="@drawable/reforest"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp"
                     tools:ignore="MissingConstraints"
                     tools:layout_editor_absoluteX="0dp"
                     android:layout_margin="12sp"
                     android:layout_gravity="center"
                     android:layout_marginTop="12dp"
                     tools:layout_editor_absoluteY="8dp" />
-                <ImageView
-                    android:id="@+id/ivdest2"
-                    android:layout_width="294dp"
-                    android:layout_height="216dp"
-                    android:src="@drawable/tablaest"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/descripReforest"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:layout_margin="11dp"
                     tools:ignore="MissingConstraints"
                     tools:layout_editor_absoluteX="0dp"
-                    android:layout_margin="12sp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="12dp"
-                    tools:layout_editor_absoluteY="8dp" />
+                    tools:layout_editor_absoluteY="206dp" />
+
 
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
-        
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="50dp"
-            tools:ignore="UseCompoundDrawables">
-
 
             <ImageView
                 android:layout_width="370dp"
@@ -114,19 +105,12 @@
                 android:src="@drawable/recycle"
                 />
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
             <TextView
                 android:layout_width="370dp"
                 android:layout_height="60dp"
                 android:textAlignment="center"
                 android:text="© Grupo 8 - Desarrollo de App"
                 android:textColor="#ffffff"/>
-
-        </LinearLayout>
 
     </LinearLayout>
 

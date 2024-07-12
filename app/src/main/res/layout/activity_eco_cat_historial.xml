@@ -10,7 +10,7 @@
     tools:context=".EcoCategoria">
 
     <ImageButton
-        android:id="@+id/Buttonbackest"
+        android:id="@+id/ButtonbackHis"
         android:layout_width="69dp"
         android:layout_height="51dp"
         android:background="#4CAF50"
@@ -60,28 +60,16 @@
                 tools:ignore="UseCompoundDrawables">
 
                 <TextView
-                    android:id="@+id/ecoReg"
+                    android:id="@+id/ecohist1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:textAlignment="center"
-                    android:text="Estadísticas "
+                    android:text="Historial "
                     android:textColor="#FFFFFF"
                     android:textSize="25sp"
                     android:background="#2A2D32CC"/>
 
-
-                <ImageView
-                    android:id="@+id/ivest1"
-                    android:layout_width="331dp"
-                    android:layout_height="192dp"
-                    android:src="@drawable/graficaest"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="0dp"
-                    android:layout_margin="12sp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="12dp"
-                    tools:layout_editor_absoluteY="8dp" />
                 <ImageView
                     android:id="@+id/ivdest2"
                     android:layout_width="294dp"
@@ -94,11 +82,48 @@
                     android:layout_marginTop="12dp"
                     tools:layout_editor_absoluteY="8dp" />
 
+                <TextView
+                    android:id="@+id/ecoHist2"
+                    android:layout_width="match_parent"
+                    android:layout_height="73dp"
+                    android:layout_margin="7dp"
+                    android:layout_marginTop="460dp"
+                    android:layout_marginLeft="108dp"
+                    android:textAlignment="center"
+                    android:text="Este mes tienes una puntuación de: "
+                    android:textColor="#FFFFFF"
+                    android:textSize="19sp"
+                    />
+                <TextView
+                    android:id="@+id/ecoHist3"
+                    android:layout_width="match_parent"
+                    android:layout_height="71dp"
+                    android:layout_margin="2dp"
+                    android:layout_marginTop="460dp"
+                    android:layout_marginLeft="108dp"
+                    android:textAlignment="center"
+                    android:text="40"
+                    android:textColor="#000000"
+                    android:textSize="36dp"
+                    />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#07F0B002"
+                    android:isIndicator="true"
+                    android:numStars="4"
+                    android:rating="4.5"
+                    android:stepSize="0.5" />
+
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
-        
+
+
 
         <LinearLayout
             android:layout_width="match_parent"

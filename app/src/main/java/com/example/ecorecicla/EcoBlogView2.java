@@ -11,22 +11,22 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class EcoEstadistica extends AppCompatActivity {
+public class EcoBlogView2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eco_estadistica);
-        ImageButton btnback = findViewById(R.id.Buttonbackest);
+        setContentView(R.layout.activity_eco_blog_view2);
+        ImageButton btnback = findViewById(R.id.Buttonback);
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(EcoEstadistica.this, MainActivity.class);
+                Intent i = new Intent(EcoBlogView2.this, EcoBlog.class);
                 startActivity(i);
                 finish();
-
             }
         });
+
 
     }
 }

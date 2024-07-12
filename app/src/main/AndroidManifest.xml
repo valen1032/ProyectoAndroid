@@ -13,11 +13,37 @@
         android:theme="@style/Theme.EcoRecicla"
         tools:targetApi="31">
         <activity
+            android:name=".EcoBlogView2"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".EcoBlogView1"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".EcoCatHistorial"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".EcoCatRegistrar"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".EcoBlog"
             android:exported="true">
             <intent-filter>
-
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -25,8 +51,6 @@
             android:name=".EcoEstadistica"
             android:exported="true">
             <intent-filter>
-
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -34,7 +58,6 @@
             android:name=".EcoCategoria"
             android:exported="true">
             <intent-filter>
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
