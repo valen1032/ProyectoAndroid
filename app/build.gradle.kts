@@ -6,6 +6,9 @@ android {
     namespace = "com.example.ecorecicla"
     compileSdk = 34
 
+
+
+
     defaultConfig {
         applicationId = "com.example.ecorecicla"
         minSdk = 33
@@ -25,6 +28,8 @@ android {
             )
         }
     }
+
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -37,7 +42,9 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation("com.android.support:cardview-v7:27.1.1")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
 }

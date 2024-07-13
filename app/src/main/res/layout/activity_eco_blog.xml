@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#487F3E"
+    tools:context=".EcoCategoria">
+
+    <ImageButton
+        android:id="@+id/Buttonback"
+        android:layout_width="69dp"
+        android:layout_height="51dp"
+        android:background="#4CAF50"
+        android:layout_margin="12sp"
+        android:layout_gravity="end"
+        android:contentDescription="TODO"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/btn_back"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="492dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/Logotipo"
+            android:layout_width="69dp"
+            android:layout_height="51dp"
+            android:layout_gravity="end"
+            android:layout_margin="12sp"
+            android:src="@drawable/logo_white"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="8dp" />
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/ItemcatR"
+            android:layout_width="331dp"
+            android:layout_height="61dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#2A2D32CC"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="267dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="11dp"
+                    android:gravity="center"
+                    android:text="Blog - Consejos"
+                    android:textColor="@color/white"
+                    android:textSize="28dp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="206dp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/Itemcard1"
+            android:layout_width="360dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_margin="11dp"
+            app:cardBackgroundColor="#ffffff"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            tools:ignore="MissingClass,MissingConstraints"
+            tools:layout_editor_absoluteX="39dp"
+            tools:layout_editor_absoluteY="268dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:id="@+id/imgBlog"
+                    android:layout_width="160dp"
+                    android:layout_height="115dp"
+                    android:layout_margin="10dp"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/reforest"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp" />
+
+                <TextView
+                    android:id="@+id/ecoBlog"
+                    android:layout_width="157dp"
+                    android:layout_height="33dp"
+                    android:layout_margin="7dp"
+                    android:text="Reforestación"
+                    android:textColor="#487F3E"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <ImageButton
+                    android:id="@+id/ecobtn1"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="232dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="TODO"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/icon_arrow_green" />
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/Itemblog2"
+            android:layout_width="360dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#ffffff"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            tools:ignore="MissingClass,MissingConstraints"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="267dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:id="@+id/imgBlog2"
+                    android:layout_width="150dp"
+                    android:layout_height="130dp"
+                    android:layout_margin="10dp"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/agua"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp" />
+
+                <TextView
+                    android:id="@+id/ecoBlog2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="7dp"
+                    android:text="Acceso al agua potable"
+                    android:textColor="#487F3E"
+                    android:textSize="28dp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <ImageButton
+                    android:id="@+id/ecobtn2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="232dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="TODO"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/icon_arrow_green" />
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="4" />
+
+            <ImageView
+                android:layout_width="370dp"
+                android:layout_height="60dp"
+                android:src="@drawable/recycle" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2" />
+
+            <TextView
+                android:layout_width="370dp"
+                android:layout_height="60dp"
+                android:text="© Grupo 8 - Desarrollo de App"
+                android:textAlignment="center"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

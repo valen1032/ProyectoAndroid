@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#487F3E"
+    tools:context=".EcoCategoria">
+
+    <ImageButton
+        android:id="@+id/Buttonback"
+        android:layout_width="69dp"
+        android:layout_height="51dp"
+        android:background="#4CAF50"
+        android:layout_margin="12sp"
+        android:layout_gravity="end"
+        android:contentDescription="TODO"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/btn_back"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="492dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/Logotipo"
+            android:layout_width="69dp"
+            android:layout_height="51dp"
+            android:src="@drawable/logo_white"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            android:layout_margin="12sp"
+            android:layout_gravity="end"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Categorias"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:layout_margin="11dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="206dp" />
+        <ImageView
+            android:id="@+id/ivcate"
+            android:layout_width="331dp"
+            android:layout_height="192dp"
+            android:src="@drawable/categor"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            android:layout_margin="12sp"
+            android:layout_gravity="center"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/ItemcatR"
+            android:layout_width="331dp"
+            android:layout_height="61dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#2A2D32CC"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="267dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <Button
+                    android:id="@+id/btnecoReg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Registrar Reciclaje"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:drawableEnd="@drawable/btn_next"
+                    android:background="#2A2D32CC"/>
+
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/ItemcatH"
+            android:layout_width="331dp"
+            android:layout_height="61dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#2A2D32CC"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="267dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="118dp"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <Button
+                    android:id="@+id/btnecoSegui"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="Seguimiento - Historial"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:drawableEnd="@drawable/btn_next"
+                    android:background="#2A2D32CC"/>
+
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="100dp"
+            tools:ignore="UseCompoundDrawables">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="370dp"
+                android:layout_height="60dp"
+                android:src="@drawable/recycle"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="370dp"
+                android:layout_height="60dp"
+                android:textAlignment="center"
+                android:text="© Grupo 8 - Desarrollo de App"
+                android:textColor="#ffffff"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,6 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Base.Theme.EcoRecicla" parent="Theme.AppCompat.Light.NoActionBar">
     </style>
-
     <style name="Theme.EcoRecicla" parent="Base.Theme.EcoRecicla" />
 </resources>
