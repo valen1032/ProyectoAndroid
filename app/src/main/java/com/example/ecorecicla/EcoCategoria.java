@@ -23,7 +23,7 @@ public class EcoCategoria extends AppCompatActivity {
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(EcoCategoria.this, MainActivity.class);
+                Intent i = new Intent(EcoCategoria.this, MenuActivity.class);
                 startActivity(i);
                 finish();
             }
