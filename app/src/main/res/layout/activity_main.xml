@@ -246,9 +246,5 @@
             android:textAlignment="center"
             android:text="© Grupo 8 - Desarrollo de App"
             android:textColor="#ffffff"/>
-
     </LinearLayout>
-
-
-
 </LinearLayout>

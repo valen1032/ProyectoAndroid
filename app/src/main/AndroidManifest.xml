@@ -13,56 +13,13 @@
         android:theme="@style/Theme.EcoRecicla"
         tools:targetApi="31">
         <activity
-            android:name=".EcoBlogView2"
-            android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".UserRegisterActivity"
+            android:exported="false" />
         <activity
-            android:name=".EcoBlogView1"
-            android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".MenuActivity"
+            android:exported="false" />
         <activity
-            android:name=".EcoCatHistorial"
-            android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".EcoCatRegistrar"
-            android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".EcoBlog"
-            android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".EcoEstadistica"
-            android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".EcoCategoria"
-            android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,6 +27,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".EcoCategoria" />
+        <activity android:name=".EcoEstadistica" />
+        <activity android:name=".EcoBlog" />
+        <activity android:name=".EcoCatRegistrar" />
+        <activity android:name=".EcoCatHistorial" />
+        <activity android:name=".EcoBlogView1" />
+        <activity android:name=".EcoBlogView2" />
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".ListUserActivity" />
     </application>
 
 </manifest>

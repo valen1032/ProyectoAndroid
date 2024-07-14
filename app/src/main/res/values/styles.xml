@@ -1,0 +1,18 @@
+<resources>
+    <!-- Estilo para las filas de la tabla -->
+    <style name="TableRowStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/table_row_background</item>
+    </style>
+
+    <!-- Estilo para las celdas de la tabla -->
+    <style name="TableCellStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@drawable/table_cell_background</item>
+    </style>
+
+    <string name="hint_email">Email</string>
+</resources>

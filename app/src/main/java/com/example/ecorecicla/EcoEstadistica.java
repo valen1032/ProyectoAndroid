@@ -21,7 +21,7 @@ public class EcoEstadistica extends AppCompatActivity {
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(EcoEstadistica.this, MainActivity.class);
+                Intent i = new Intent(EcoEstadistica.this, MenuActivity.class);
                 startActivity(i);
                 finish();
 
