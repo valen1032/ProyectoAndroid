@@ -7,9 +7,6 @@ import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class UserRegisterActivity extends AppCompatActivity {
 
@@ -27,9 +24,20 @@ public class UserRegisterActivity extends AppCompatActivity {
                 // Redirigir a LoginActivity
                 Intent intent = new Intent(UserRegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
-                finish(); // Opcional: Cierra la actividad actual para que no se quede en el stack de actividades
+                finish();
             }
         });
+
+        Button verUserButton = findViewById(R.id.verUserButton);
+        verUserButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserRegisterActivity.this, ListUserActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        new UserFormHelper(this);
 
     }
 }

@@ -8,9 +8,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ecorecicla.R;
+//import com.example.ecorecicla.R;
 import com.models.DatabaseManager;
-import com.example.ecorecicla.ListUserActivity;
+//import com.example.ecorecicla.ListUserActivity;
 
 public class UserFormHelper {
     private Activity activity;
@@ -22,7 +22,7 @@ public class UserFormHelper {
     private EditText phoneField;
     private EditText passwordField;
     private Button registerButton;
-    private TextView textView;
+    //private TextView textView;
 
     public UserFormHelper(Activity activity) {
         this.activity = activity;

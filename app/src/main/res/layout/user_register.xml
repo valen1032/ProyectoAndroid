@@ -137,7 +137,7 @@
                 android:padding="8dp"
                 android:text="Listado usuarios"
                 android:textColor="@android:color/white"
-                android:visibility="gone"
+                android:visibility="visible"
                 />
 
         </LinearLayout>
