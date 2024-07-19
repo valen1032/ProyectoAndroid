@@ -1,5 +1,6 @@
 package com.example.ecorecicla;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -59,7 +60,11 @@ public class ListUserActivity extends AppCompatActivity {
             do {
                 // Obtiene los datos del usuario del cursor
                 final int id = cursor.getInt(0);
+                String nombres = cursor.getString(1);
+                String apellidos = cursor.getString(2);
                 String document = cursor.getString(3);
+                String email = cursor.getString(4);
+                String phone = cursor.getString(5);
 
                 // Crea una nueva fila para cada usuario y la agrega a la tabla
                 TableRow row = new TableRow(this);
@@ -83,11 +88,18 @@ public class ListUserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         // Acción al hacer clic en el botón "Ver"
-                        Toast.makeText(ListUserActivity.this, "Ver usuario: " + id, Toast.LENGTH_SHORT).show();
-                        // Aquí puedes implementar la lógica para ver más detalles del usuario
+                        Intent intent = new Intent(ListUserActivity.this, UserDetailActivity.class);
+                        intent.putExtra("id", id);
+                        intent.putExtra("document", document);
+                        intent.putExtra("nombres", nombres);
+                        intent.putExtra("apellidos", apellidos);
+                        intent.putExtra("email", email);
+                        intent.putExtra("phone", phone);
+                        startActivity(intent);
                     }
                 });
                 row.addView(buttonVer);
+
 
                 // Crea y configura el botón "Eliminar"
                 Button buttonEliminar = createButton("Eliminar");
