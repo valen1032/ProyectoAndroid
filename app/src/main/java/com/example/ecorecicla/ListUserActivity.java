@@ -13,13 +13,15 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.models.DatabaseManager;
 
 public class ListUserActivity extends AppCompatActivity {
     private DatabaseManager dbManager;
-    private static final int REQUEST_CODE_USER_DETAIL = 1;
+    private ActivityResultLauncher<Intent> userDetailLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +30,25 @@ public class ListUserActivity extends AppCompatActivity {
 
         dbManager = new DatabaseManager(this); // Inicializa el gestor de base de datos
 
+        // Inicializar el ActivityResultLauncher
+        userDetailLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK) {
+                        // Refresca los datos aquí
+                        refreshUserList();
+                    }
+                }
+        );
+
+        // Inicializar la tabla de usuarios
+        refreshUserList();
+    }
+
+    private void refreshUserList() {
         // Obtiene referencia a la TableLayout donde se mostrarán los usuarios
         TableLayout tableLayoutUsers = findViewById(R.id.tableLayoutUsers);
+        tableLayoutUsers.removeAllViews();
 
         // Crear y agregar la fila de encabezado
         TableRow headerRow = new TableRow(this);
@@ -84,7 +103,6 @@ public class ListUserActivity extends AppCompatActivity {
                 row.addView(textViewDocument);
 
                 // Crea y configura el botón "Ver"
-                // Crea y configura el botón "Ver"
                 Button buttonVer = createButton("Ver");
                 buttonVer.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -97,7 +115,7 @@ public class ListUserActivity extends AppCompatActivity {
                         intent.putExtra("apellidos", apellidos);
                         intent.putExtra("email", email);
                         intent.putExtra("phone", phone);
-                        startActivityForResult(intent, REQUEST_CODE_USER_DETAIL);
+                        userDetailLauncher.launch(intent);
                     }
                 });
                 row.addView(buttonVer);
@@ -107,12 +125,7 @@ public class ListUserActivity extends AppCompatActivity {
                 buttonEliminar.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // Acción al hacer clic en el botón "Eliminar"
                         Toast.makeText(ListUserActivity.this, "Eliminar usuario: " + id, Toast.LENGTH_SHORT).show();
-                        // Aquí puedes implementar la lógica para eliminar el usuario de la base de datos
-                        // por ejemplo: dbManager.deleteUser(id);
-                        // Luego, puedes remover la fila de la tabla:
-                        // tableLayoutUsers.removeView(row);
                     }
                 });
                 row.addView(buttonEliminar);
@@ -174,115 +187,4 @@ public class ListUserActivity extends AppCompatActivity {
 
         return button;
     }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == REQUEST_CODE_USER_DETAIL) {
-            if (resultCode == RESULT_OK) {
-                // Refresca los datos aquí
-                refreshUserList();
-            }
-        }
-    }
-
-    private void refreshUserList() {
-        // Limpia la tabla actual
-        TableLayout tableLayoutUsers = findViewById(R.id.tableLayoutUsers);
-        tableLayoutUsers.removeAllViews();
-
-        // Volver a agregar la fila de encabezado
-        TableRow headerRow = new TableRow(this);
-        headerRow.setLayoutParams(new TableLayout.LayoutParams(
-                TableLayout.LayoutParams.MATCH_PARENT,
-                TableLayout.LayoutParams.WRAP_CONTENT
-        ));
-        headerRow.setBackgroundResource(R.drawable.table_row_background);
-
-        TextView headerId = createHeaderView("Id");
-        headerRow.addView(headerId);
-
-        TextView headerDocument = createHeaderView("Documento");
-        headerRow.addView(headerDocument);
-
-        TextView headerVer = createHeaderView("Ver");
-        headerRow.addView(headerVer);
-
-        TextView headerEliminar = createHeaderView("Eliminar");
-        headerRow.addView(headerEliminar);
-
-        tableLayoutUsers.addView(headerRow);
-
-        // Obtener todos los usuarios de la base de datos
-        Cursor cursor = dbManager.getUsers();
-        if (cursor.moveToFirst()) { // Verifica si hay al menos un usuario
-            do {
-                // Obtiene los datos del usuario del cursor
-                final int id = cursor.getInt(0);
-                String nombres = cursor.getString(1);
-                String apellidos = cursor.getString(2);
-                String document = cursor.getString(3);
-                String email = cursor.getString(4);
-                String phone = cursor.getString(5);
-
-                // Crea una nueva fila para cada usuario y la agrega a la tabla
-                TableRow row = new TableRow(this);
-                row.setLayoutParams(new TableLayout.LayoutParams(
-                        TableLayout.LayoutParams.MATCH_PARENT,
-                        TableLayout.LayoutParams.WRAP_CONTENT
-                ));
-                row.setBackgroundResource(R.drawable.table_row_background); // Establece el fondo para la fila
-
-                // Crea y configura el TextView para el ID del usuario
-                TextView textViewId = createDataView(String.valueOf(id));
-                row.addView(textViewId);
-
-                // Crea y configura el TextView para el documento del usuario
-                TextView textViewDocument = createDataView(document);
-                row.addView(textViewDocument);
-
-                // Crea y configura el botón "Ver"
-                Button buttonVer = createButton("Ver");
-                buttonVer.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Acción al hacer clic en el botón "Ver"
-                        Intent intent = new Intent(ListUserActivity.this, UserDetailActivity.class);
-                        intent.putExtra("id", id);
-                        intent.putExtra("document", document);
-                        intent.putExtra("nombres", nombres);
-                        intent.putExtra("apellidos", apellidos);
-                        intent.putExtra("email", email);
-                        intent.putExtra("phone", phone);
-                        startActivityForResult(intent, REQUEST_CODE_USER_DETAIL);
-                    }
-                });
-                row.addView(buttonVer);
-
-                // Crea y configura el botón "Eliminar"
-                Button buttonEliminar = createButton("Eliminar");
-                buttonEliminar.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Acción al hacer clic en el botón "Eliminar"
-                        Toast.makeText(ListUserActivity.this, "Eliminar usuario: " + id, Toast.LENGTH_SHORT).show();
-                        // Aquí puedes implementar la lógica para eliminar el usuario de la base de datos
-                        // por ejemplo: dbManager.deleteUser(id);
-                        // Luego, puedes remover la fila de la tabla:
-                        // tableLayoutUsers.removeView(row);
-                    }
-                });
-                row.addView(buttonEliminar);
-
-                // Agrega la fila a la TableLayout
-                tableLayoutUsers.addView(row);
-
-            } while (cursor.moveToNext()); // Repite para cada usuario en la base de datos
-        }
-        cursor.close(); // Cierra el cursor para liberar recursos
-    }
-
-
-
 }
