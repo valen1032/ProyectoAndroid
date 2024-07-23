@@ -1,15 +1,19 @@
 package com.example.ecorecicla;
 
 import android.content.DialogInterface;
+import android.database.Cursor;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.StyleSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.models.DatabaseManager;
 
 public class UserDetailActivity extends AppCompatActivity {
 
@@ -83,10 +87,13 @@ public class UserDetailActivity extends AppCompatActivity {
     }
 
     private void deleteUser(int userId) {
-        // Lógica para eliminar el usuario
-        // Por ejemplo, puedes eliminar el usuario de la base de datos aquí
-
-        // Volver a la actividad anterior después de eliminar el usuario
+        DatabaseManager dbManager = new DatabaseManager(this);
+        dbManager.deleteUser(userId);
+        dbManager.close();
+        setResult(RESULT_OK);
         finish();
+
     }
+
+
 }

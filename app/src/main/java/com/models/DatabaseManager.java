@@ -52,4 +52,10 @@ public class DatabaseManager {
     public void deleteUser(int id) {
         database.delete("users", "id = ?", new String[]{String.valueOf(id)});
     }
+
+    public void close() {
+        if (database != null && database.isOpen()) {
+            database.close();
+        }
+    }
 }
