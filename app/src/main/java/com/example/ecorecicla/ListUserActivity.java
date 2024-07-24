@@ -65,11 +65,8 @@ public class ListUserActivity extends AppCompatActivity {
         TextView headerDocument = createHeaderView("Documento");
         headerRow.addView(headerDocument);
 
-        TextView headerVer = createHeaderView("Ver");
+        TextView headerVer = createHeaderView("VER");
         headerRow.addView(headerVer);
-
-        TextView headerEliminar = createHeaderView("Eliminar");
-        headerRow.addView(headerEliminar);
 
         // Agregar la fila de encabezado a la TableLayout
         tableLayoutUsers.addView(headerRow);
@@ -92,7 +89,7 @@ public class ListUserActivity extends AppCompatActivity {
                         TableLayout.LayoutParams.MATCH_PARENT,
                         TableLayout.LayoutParams.WRAP_CONTENT
                 ));
-                row.setBackgroundResource(R.drawable.table_row_background); // Establece el fondo para la fila
+                row.setBackgroundResource(R.drawable.table_row_background);
 
                 // Crea y configura el TextView para el ID del usuario
                 TextView textViewId = createDataView(String.valueOf(id));
@@ -119,16 +116,6 @@ public class ListUserActivity extends AppCompatActivity {
                     }
                 });
                 row.addView(buttonVer);
-
-                // Crea y configura el botón "Eliminar"
-                Button buttonEliminar = createButton("Eliminar");
-                buttonEliminar.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(ListUserActivity.this, "Eliminar usuario: " + id, Toast.LENGTH_SHORT).show();
-                    }
-                });
-                row.addView(buttonEliminar);
 
                 // Agrega la fila a la TableLayout
                 tableLayoutUsers.addView(row);
@@ -174,10 +161,10 @@ public class ListUserActivity extends AppCompatActivity {
         button.setLayoutParams(params);
 
         // Ajusta el padding según tus preferencias
-        button.setPadding(8, 4, 8, 4);
+        button.setPadding(10, 5, 10, 5);
 
         // Ajusta el tamaño del texto según tus preferencias
-        button.setTextSize(10);
+        button.setTextSize(12);
 
         // Ajusta la gravedad del texto
         button.setGravity(Gravity.CENTER);
