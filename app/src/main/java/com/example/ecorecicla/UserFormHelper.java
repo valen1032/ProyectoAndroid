@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ public class UserFormHelper {
     private EditText phoneField;
     private EditText passwordField;
     private Button registerButton;
+    private CheckBox termsCheckBox;
     //private TextView textView;
 
     public UserFormHelper(Activity activity) {
@@ -34,6 +36,7 @@ public class UserFormHelper {
         phoneField = activity.findViewById(R.id.phone);
         passwordField = activity.findViewById(R.id.password);
         registerButton = activity.findViewById(R.id.registerButton);
+        termsCheckBox = activity.findViewById(R.id.termsCheckBox);
 
         setupRegisterButton();
     }
@@ -49,7 +52,7 @@ public class UserFormHelper {
                 String phone = phoneField.getText().toString();
                 String password = passwordField.getText().toString();
 
-                if (firstName.isEmpty() || lastName.isEmpty() || idNumber.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty()) {
+                if (firstName.isEmpty() || lastName.isEmpty() || idNumber.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty() ||  !termsCheckBox.isChecked()) {
                     Toast.makeText(activity, "Por favor diligencie todos los campos", Toast.LENGTH_SHORT).show();
                     return;
                 }
