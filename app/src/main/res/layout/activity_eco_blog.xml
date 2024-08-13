@@ -198,48 +198,74 @@
                     app:srcCompat="@drawable/icon_arrow_green" />
             </RelativeLayout>
 
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/Itemblog3"
+            android:layout_width="360dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#ffffff"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            tools:ignore="MissingClass,MissingConstraints"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="267dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:id="@+id/imgBlog3"
+                    android:layout_width="150dp"
+                    android:layout_height="130dp"
+                    android:layout_margin="10dp"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/rec"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp" />
+
+                <TextView
+                    android:id="@+id/ecoBlog3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="7dp"
+                    android:text="Reciclaje Electronico"
+                    android:textColor="#487F3E"
+                    android:textSize="28dp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <ImageButton
+                    android:id="@+id/ecobtn3"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="232dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="TODO"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/icon_arrow_green" />
+            </RelativeLayout>
 
         </android.support.v7.widget.CardView>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:orientation="horizontal"
-            tools:ignore="UseCompoundDrawables">
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_weight="4" />
-
-            <ImageView
-                android:layout_width="370dp"
-                android:layout_height="60dp"
-                android:src="@drawable/recycle" />
 
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2" />
-
-            <TextView
-                android:layout_width="370dp"
-                android:layout_height="60dp"
-                android:text="© Grupo 8 - Desarrollo de App"
-                android:textAlignment="center"
-                android:textColor="#ffffff" />
-
-        </LinearLayout>
 
     </LinearLayout>
 

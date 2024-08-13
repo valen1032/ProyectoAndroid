@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -27,6 +28,15 @@ public class ListUserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_list); // Establece el diseño para la actividad
+        ImageButton btnback = findViewById(R.id.Buttonbackest);
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ListUserActivity.this, UserRegisterActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         dbManager = new DatabaseManager(this); // Inicializa el gestor de base de datos
 

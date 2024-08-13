@@ -5,7 +5,8 @@
     <string name="logo_desc">logo de fondo</string>
     <string name="descripReforest">La reforestación se levanta como el pilar fundamental para construir un mundo donde la armonía entre la actividad humana y la naturaleza sea la clave de una convivencia duradera y sostenible</string>
     <string name="descripAgua">El acceso al agua potable es fundamental para poder comer, lavarse o beber. La gestión sostenible de los recursos hídricos ayuda a gestionar de forma más adecuada la producción de alimentos, de energía, y contribuye al trabajo justo y al crecimiento económico.</string>
-    <string name="hint_material">Material a registrar</string>
+    <string name="descripElec">Permite recuperar elementos (como vidrio, plástico y metales) que vuelven al ciclo productivo. Esto disminuye la extracción de materias primas, cuidando los recursos naturales, y reduce la contaminación del aire, el agua y el suelo (Comimtel, 2018).</string>
+    <string name="hint_material">Registrar Categoria</string>
     <string name="hint_cantidad">Cantidad</string>
     <string name="hint_descripcion">Descripción</string>
     <string name="button_add">Añadir nuevo</string>

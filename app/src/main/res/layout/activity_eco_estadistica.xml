@@ -39,23 +39,9 @@
             android:layout_gravity="end"
             tools:layout_editor_absoluteY="8dp" />
 
-
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/ItemcatH"
-            android:layout_width="345dp"
-            android:layout_height="500dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            app:cardBackgroundColor="#2A2D32CC"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="10dp"
-            tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="267dp">
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
                 tools:ignore="UseCompoundDrawables">
 
@@ -70,63 +56,23 @@
                     android:textSize="25sp"
                     android:background="#2A2D32CC"/>
 
+                <android.support.v7.widget.CardView
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp">
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/graficopastel"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
 
-                <ImageView
-                    android:id="@+id/ivest1"
-                    android:layout_width="331dp"
-                    android:layout_height="192dp"
-                    android:src="@drawable/graficaest"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="0dp"
-                    android:layout_margin="12sp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="12dp"
-                    tools:layout_editor_absoluteY="8dp" />
-                <ImageView
-                    android:id="@+id/ivdest2"
-                    android:layout_width="294dp"
-                    android:layout_height="216dp"
-                    android:src="@drawable/tablaest"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="0dp"
-                    android:layout_margin="12sp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="12dp"
-                    tools:layout_editor_absoluteY="8dp" />
+                        />
+
+                </android.support.v7.widget.CardView>
+
 
 
             </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-        
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="50dp"
-            tools:ignore="UseCompoundDrawables">
-
-
-            <ImageView
-                android:layout_width="370dp"
-                android:layout_height="60dp"
-                android:src="@drawable/recycle"
-                />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="370dp"
-                android:layout_height="60dp"
-                android:textAlignment="center"
-                android:text="© Grupo 8 - Desarrollo de App"
-                android:textColor="#ffffff"/>
-
-        </LinearLayout>
 
     </LinearLayout>
 

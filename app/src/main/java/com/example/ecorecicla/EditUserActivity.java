@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class EditUserActivity extends AppCompatActivity {
 
     private EditText editTextId, firstName, lastName, idNumber, email, phone;
-    private int userId;
+    private int catId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +26,8 @@ public class EditUserActivity extends AppCompatActivity {
 
         // Obtener los datos del usuario desde el Intent
         Intent intent = getIntent();
-        userId = intent.getIntExtra("id", -1);
-        editTextId.setText(String.valueOf(userId));
+        catId = intent.getIntExtra("id", -1);
+        editTextId.setText(String.valueOf(catId));
         idNumber.setText(intent.getStringExtra("document"));
         firstName.setText(intent.getStringExtra("nombres"));
         lastName.setText(intent.getStringExtra("apellidos"));
@@ -46,7 +46,7 @@ public class EditUserActivity extends AppCompatActivity {
 
             // Crear un Intent para devolver los datos modificados a UserDetailActivity
             Intent resultIntent = new Intent();
-            resultIntent.putExtra("id", userId);
+            resultIntent.putExtra("id", catId);
             resultIntent.putExtra("document", newDocument);
             resultIntent.putExtra("nombres", newNombres);
             resultIntent.putExtra("apellidos", newApellidos);

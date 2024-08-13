@@ -37,7 +37,7 @@
                 android:layout_marginBottom="8dp" />
 
             <TextView
-                android:id="@+id/textViewDocument"
+                android:id="@+id/textViewCategoria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Categoria"
@@ -45,7 +45,7 @@
                 android:layout_marginBottom="8dp" />
 
             <TextView
-                android:id="@+id/textViewNombres"
+                android:id="@+id/textViewCantidad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cantidad"
@@ -53,7 +53,7 @@
                 android:layout_marginBottom="8dp" />
 
             <TextView
-                android:id="@+id/textViewApellidos"
+                android:id="@+id/textViewDescripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Descripcion"
@@ -61,7 +61,7 @@
                 android:layout_marginBottom="8dp" />
 
             <TextView
-                android:id="@+id/textViewEmail"
+                android:id="@+id/textViewFecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fecha:"
@@ -104,7 +104,7 @@
                 android:background="@drawable/button_background_gray"
                 android:backgroundTint="#6E6D6D"
                 android:padding="10dp"
-                android:text="USUARIOS"
+                android:text="CATEGORIAS"
                 android:minHeight="48dp"
                 android:textColor="@android:color/white"
                 />

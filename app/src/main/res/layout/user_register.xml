@@ -6,6 +6,7 @@
     android:backgroundTint="#434647"
     android:backgroundTintMode="add">
 
+    
     <ImageView
         android:id="@+id/backgroundImage"
         android:layout_width="match_parent"
@@ -13,7 +14,7 @@
         android:contentDescription="@string/background_image_desc"
         android:scaleType="centerCrop"
         android:src="@drawable/register" />
-
+    
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,13 +24,31 @@
         android:orientation="vertical"
         android:padding="38dp">
 
+
+        <ImageButton
+            android:id="@+id/Buttonbackest"
+            android:layout_width="69dp"
+            android:layout_height="51dp"
+            android:background="#4CAF50"
+            android:layout_margin="12sp"
+            android:layout_gravity="end"
+            android:contentDescription="TODO"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_back"
+
+            />
+
+
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/background_rounded"
             android:orientation="vertical"
             android:padding="16dp">
-
+            
+            
             <ImageView
                 android:id="@+id/logoImageView"
                 android:layout_width="86dp"

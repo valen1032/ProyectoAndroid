@@ -6,6 +6,20 @@
     android:padding="16dp"
     android:background="@android:color/white">
 
+
+    <ImageButton
+        android:id="@+id/Buttonbackest"
+        android:layout_width="69dp"
+        android:layout_height="51dp"
+        android:background="#4CAF50"
+        android:layout_margin="12sp"
+        android:layout_gravity="end"
+        android:contentDescription="TODO"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_back"
+
+        />
+
     <TextView
         android:id="@+id/textViewHeader"
         android:layout_width="match_parent"
