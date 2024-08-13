@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#487F3E"
+    tools:context=".EcoCategoria">
+
+    <ImageButton
+        android:id="@+id/Buttonback"
+        android:layout_width="69dp"
+        android:layout_height="51dp"
+        android:background="#4CAF50"
+        android:layout_margin="12sp"
+        android:layout_gravity="end"
+        android:contentDescription="TODO"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/btn_back"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="492dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/Logotipo"
+            android:layout_width="69dp"
+            android:layout_height="51dp"
+            android:src="@drawable/logo_white"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            android:layout_margin="12sp"
+            android:layout_gravity="end"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reciclaje Electronica"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:layout_margin="11dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="206dp" />
+        <android.support.v7.widget.CardView
+            android:id="@+id/ItemcatH"
+            android:layout_width="345dp"
+            android:layout_height="500dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#2A2D32CC"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="267dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:orientation="vertical"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:id="@+id/ivest1"
+                    android:layout_width="331dp"
+                    android:layout_height="192dp"
+                    android:src="@drawable/rec"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="0dp"
+                    android:layout_margin="12sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    tools:layout_editor_absoluteY="8dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/descripElec"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="22dp"
+                    android:layout_margin="11dp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="206dp" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <ImageView
+            android:layout_width="370dp"
+            android:layout_height="60dp"
+            android:src="@drawable/recycle"
+            />
+
+        <TextView
+            android:layout_width="370dp"
+            android:layout_height="60dp"
+            android:textAlignment="center"
+            android:text="© Grupo 8 - Desarrollo de App"
+            android:textColor="#ffffff"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

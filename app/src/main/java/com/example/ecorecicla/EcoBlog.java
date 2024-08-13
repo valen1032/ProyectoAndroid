@@ -20,6 +20,7 @@ public class EcoBlog extends AppCompatActivity {
         ImageButton btnback = findViewById(R.id.Buttonback);
         ImageButton blogbtn1 = findViewById(R.id.ecobtn1);
         ImageButton blogbtn2 = findViewById(R.id.ecobtn2);
+        ImageButton blogbtn3 = findViewById(R.id.ecobtn3);
 
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +47,15 @@ public class EcoBlog extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent i = new Intent(EcoBlog.this, EcoBlogView2.class);
+                startActivity(i);
+                finish();
+
+            }
+        });
+        blogbtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(EcoBlog.this, EcoBlogView3.class);
                 startActivity(i);
                 finish();
 

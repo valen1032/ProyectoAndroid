@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "eco_recicla.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -27,6 +27,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ")";
 
         db.execSQL(CREATE_TABLE);
+        String CREATE_TABLE_Cat = "CREATE TABLE categorias (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "categoria TEXT, " +
+                "cantidad INTEGER, " +
+                "descripcion TEXT, " +
+                "fecha DATE " +
+                ")";
+
+        db.execSQL(CREATE_TABLE_Cat);
     }
 
     @Override
@@ -38,5 +47,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             // Actualiza la base de datos para incluir el nuevo campo
             db.execSQL("ALTER TABLE users ADD COLUMN rol TEXT");
         }
+        if (oldVersion < 3) {
+            // Actualiza la base de datos para incluir el nuevo campo
+            String CREATE_TABLE_Cat = "CREATE TABLE categorias (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    "categoria TEXT, " +
+                    "cantidad INTEGER, " +
+                    "descripcion TEXT, " +
+                    "fecha DATE " +
+                    ")";
+
+            db.execSQL(CREATE_TABLE_Cat);
+        }
+
     }
 }
