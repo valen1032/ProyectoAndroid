@@ -2,6 +2,7 @@ package com.example.ecorecicla;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +29,7 @@ public class CatFormHelper {
         etdesc = activity.findViewById(R.id.etdes);
         btnaddi = activity.findViewById(R.id.btnadd);
 
-        setupRegisterButton();
+        //setupRegisterButton();
     }
 
     private void setupRegisterButton() {
@@ -39,7 +40,11 @@ public class CatFormHelper {
                 String cantidad = etcanti.getText().toString();
                 String descripcion = etdesc.getText().toString();
 
-                if (categoria.isEmpty() || cantidad.isEmpty() || descripcion.isEmpty() ) {
+                Log.d("CatFormHelper", "Categoria: " + categoria);
+                Log.d("CatFormHelper", "Cantidad: " + cantidad);
+                Log.d("CatFormHelper", "Descripcion: " + descripcion);
+
+                if (categoria.isEmpty() || cantidad.isEmpty() || descripcion.isEmpty()) {
                     Toast.makeText(activity, "Por favor diligencie todos los campos", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -48,6 +53,7 @@ public class CatFormHelper {
                 showUserList();
             }
         });
+
     }
 
 

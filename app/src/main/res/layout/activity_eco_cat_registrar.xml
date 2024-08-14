@@ -102,7 +102,6 @@
                     android:hint="@string/hint_material"
                     android:minHeight="48dp" />
 
-
                 <EditText
                     android:id="@+id/etcant"
                     android:layout_width="match_parent"

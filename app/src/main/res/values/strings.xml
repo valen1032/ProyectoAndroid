@@ -10,4 +10,12 @@
     <string name="hint_cantidad">Cantidad</string>
     <string name="hint_descripcion">Descripción</string>
     <string name="button_add">Añadir nuevo</string>
+    <string-array name="material_array">
+        <item>Plástico</item>
+        <item>Cartón</item>
+        <item>Papel</item>
+        <item>Vidrio</item>
+        <item>Metal</item>
+    </string-array>
+
 </resources>
