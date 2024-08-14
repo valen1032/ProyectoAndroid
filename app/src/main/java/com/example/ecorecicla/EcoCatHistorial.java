@@ -13,174 +13,168 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.models.DatabaseManager;
+import com.models.CategoriaManager;  // Asegúrate de que esta es la clase correcta
 
 public class EcoCatHistorial extends AppCompatActivity {
 
-    private DatabaseManager dbManager;
-    private ActivityResultLauncher<Intent> catDetailLauncher;
+    private CategoriaManager dbManager;  // Instancia del manejador de categorías para interactuar con la base de datos
+    private ActivityResultLauncher<Intent> catDetailLauncher;  // Lanzador para iniciar la actividad CatDetailActivity con resultado
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eco_cat_historial);  // Establece el diseño para la actividad
-        dbManager = new DatabaseManager(this); // Inicializa el gestor de base de datos
+        setContentView(R.layout.activity_eco_cat_historial);  // Configura el diseño de la actividad
+        dbManager = new CategoriaManager(this);  // Inicializa el manejador de categorías
 
-        // Inicializar el ActivityResultLauncher
+        // Inicializar el ActivityResultLauncher para manejar resultados de la actividad CatDetailActivity
         catDetailLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
-                    if (result.getResultCode() == RESULT_OK){
-                        // Refresca los datos aquí
-                        refreshCatList();
+                    if (result.getResultCode() == RESULT_OK) {
+                        refreshCatList();  // Actualiza la lista de categorías si el resultado es OK
                     }
                 }
         );
 
+        // Configura el botón para regresar a la actividad anterior
         ImageButton btnback = findViewById(R.id.ButtonbackHis);
-        btnback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(EcoCatHistorial.this, EcoCategoria.class);
-                startActivity(i);
-                finish();
-            }
+        btnback.setOnClickListener(view -> {
+            Intent i = new Intent(EcoCatHistorial.this, EcoCategoria.class);
+            startActivity(i);  // Inicia la actividad EcoCategoria
+            finish();  // Finaliza la actividad actual
         });
 
+        // Llama a refreshCatList() para cargar los datos al inicio
+        refreshCatList();
     }
 
+    // Método para actualizar la lista de categorías en la tabla
     private void refreshCatList() {
-        // Obtiene referencia a la TableLayout donde se mostrarán los usuarios
-        TableLayout tableLayoutCats = findViewById(R.id.tableLayoutCat);
-        tableLayoutCats.removeAllViews();
+        TableLayout tableLayoutCats = findViewById(R.id.tableLayoutCat);  // Obtiene el TableLayout para mostrar los datos
+        tableLayoutCats.removeAllViews();  // Elimina todas las vistas actuales para refrescar la tabla
+
         // Crear y agregar la fila de encabezado
         TableRow headerRow = new TableRow(this);
         headerRow.setLayoutParams(new TableLayout.LayoutParams(
                 TableLayout.LayoutParams.MATCH_PARENT,
                 TableLayout.LayoutParams.WRAP_CONTENT
         ));
-        headerRow.setBackgroundResource(R.drawable.table_row_background);
+        headerRow.setBackgroundResource(R.drawable.table_row_background);  // Establece el fondo para la fila de encabezado
 
-        // Crear y configurar TextViews para los títulos de las columnas
+        // Agrega los encabezados de columna
         TextView headerId = createHeaderView("Id");
         headerRow.addView(headerId);
 
-        TextView headerDocument = createHeaderView("Categoria");
-        headerRow.addView(headerDocument);
+        TextView headerCategoria = createHeaderView("Categoria");
+        headerRow.addView(headerCategoria);
 
-        TextView headerVer = createHeaderView("VER");
+        TextView headerCantidad = createHeaderView("Cantidad");
+        headerRow.addView(headerCantidad);
+
+        TextView headerFecha = createHeaderView("Fecha");
+        headerRow.addView(headerFecha);
+
+        TextView headerVer = createHeaderView("Ver");
         headerRow.addView(headerVer);
 
-        // Agregar la fila de encabezado a la TableLayout
-        tableLayoutCats.addView(headerRow);
+        tableLayoutCats.addView(headerRow);  // Agrega la fila de encabezado a la tabla
 
-        // Obtener todos las categorias de la base de datos
-        Cursor cursor = dbManager.getUsers();
-        if (cursor.moveToFirst()) { // Verifica si hay al menos una Categoria
+        // Obtener todas las categorías de la base de datos
+        Cursor cursor = dbManager.getCategorias();  // Ejecuta la consulta para obtener categorías
+        if (cursor != null && cursor.moveToFirst()) {
             do {
-                // Obtiene los datos de la categoria del cursor
-                final int id = cursor.getInt(0);
-                String categorias = cursor.getString(1);
-                String cantidades = cursor.getString(2);
-                String descripcion = cursor.getString(3);
-                String fecha = cursor.getString(4);
+                int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
+                String categoria = cursor.getString(cursor.getColumnIndexOrThrow("categoria"));
+                String cantidad = cursor.getString(cursor.getColumnIndexOrThrow("cantidad"));
+                String descripcion = cursor.getString(cursor.getColumnIndexOrThrow("descripcion"));
+                String fecha = cursor.getString(cursor.getColumnIndexOrThrow("fecha"));
 
-                // Crea una nueva fila para cada categoria y la agrega a la tabla
+                // Crear una nueva fila para los datos de la categoría
                 TableRow row = new TableRow(this);
                 row.setLayoutParams(new TableLayout.LayoutParams(
                         TableLayout.LayoutParams.MATCH_PARENT,
                         TableLayout.LayoutParams.WRAP_CONTENT
                 ));
-                row.setBackgroundResource(R.drawable.table_row_background);
+                row.setBackgroundResource(R.drawable.table_row_background);  // Establece el fondo para la fila de datos
 
-                // Crea y configura el TextView para el ID de la categoria
+                // Agrega los datos de la categoría a la fila
                 TextView textViewId = createDataView(String.valueOf(id));
                 row.addView(textViewId);
 
-                // Crea y configura el TextView para la categoria
-                TextView textViewCategoria = createDataView(categorias);
+                TextView textViewCategoria = createDataView(categoria);
                 row.addView(textViewCategoria);
 
-                // Crea y configura el botón "Ver"
+                TextView textViewCantidad = createDataView(cantidad);
+                row.addView(textViewCantidad);
+
+                TextView textViewFecha = createDataView(fecha);
+                row.addView(textViewFecha);
+
+                // Crea un botón "Ver" que abre una nueva actividad para ver detalles
                 Button buttonVer = createButton("Ver");
-                buttonVer.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Acción al hacer clic en el botón "Ver"
-                        Intent intent = new Intent(EcoCatHistorial.this, CatDetailActivity.class);
-                        intent.putExtra("id", id);
-                        intent.putExtra("categorias", categorias);
-                        intent.putExtra("cantidades", cantidades);
-                        intent.putExtra("descripicion", descripcion);
-                        intent.putExtra("fecha", fecha);
-                        catDetailLauncher.launch(intent);
-                    }
+                buttonVer.setOnClickListener(v -> {
+                    Intent intent = new Intent(EcoCatHistorial.this, CatDetailActivity.class);
+                    intent.putExtra("id", id);
+                    intent.putExtra("categoria", categoria);
+                    intent.putExtra("cantidad", cantidad);
+                    intent.putExtra("descripcion", descripcion);
+                    intent.putExtra("fecha", fecha);
+                    catDetailLauncher.launch(intent);  // Lanza la actividad CatDetailActivity
                 });
                 row.addView(buttonVer);
 
-                // Agrega la fila a la TableLayout
-                tableLayoutCats.addView(row);
+                tableLayoutCats.addView(row);  // Agrega la fila con los datos y el botón a la tabla
 
-            } while (cursor.moveToNext()); // Repite para cada categoria en la base de datos
+            } while (cursor.moveToNext());  // Avanza al siguiente registro
         }
-        cursor.close(); // Cierra el cursor para liberar recursos
+        if (cursor != null) {
+            cursor.close();  // Cierra el cursor para liberar recursos
+        }
     }
 
-    // Método para crear TextViews de encabezado con fondo negro y texto blanco
+    // Método para crear una vista de encabezado con estilo
     private TextView createHeaderView(String text) {
         TextView textView = new TextView(this);
         textView.setText(text);
-        textView.setBackgroundResource(R.drawable.header_text_background); // Fondo negro
+        textView.setBackgroundResource(R.drawable.header_text_background);  // Establece el fondo para el encabezado
         textView.setPadding(8, 8, 8, 8);
         textView.setGravity(Gravity.CENTER);
-        textView.setTextColor(Color.WHITE); // Texto blanco
-        textView.setTypeface(null, Typeface.BOLD);
+        textView.setTextColor(Color.WHITE);
+        textView.setTypeface(null, Typeface.BOLD);  // Establece el estilo de texto en negrita
         return textView;
     }
 
-    // Método para crear TextViews de datos
+    // Método para crear una vista de datos con estilo
     private TextView createDataView(String text) {
         TextView textView = new TextView(this);
         textView.setText(text);
-        textView.setBackgroundResource(R.drawable.table_cell_background);
+        textView.setBackgroundResource(R.drawable.table_cell_background);  // Establece el fondo para las celdas de datos
         textView.setPadding(8, 8, 8, 8);
         textView.setGravity(Gravity.CENTER);
         return textView;
     }
 
-    // Método para crear botones
+    // Método para crear un botón con estilo
     private Button createButton(String text) {
         Button button = new Button(this);
         button.setText(text);
-        button.setBackgroundResource(R.drawable.button_background);
+        button.setBackgroundResource(R.drawable.button_background);  // Establece el fondo para el botón
 
-        // Define el tamaño del botón
+        // Configura el tamaño del botón basado en recursos
         int widthInPixels = getResources().getDimensionPixelSize(R.dimen.button_width);
         int heightInPixels = getResources().getDimensionPixelSize(R.dimen.button_height);
         TableRow.LayoutParams params = new TableRow.LayoutParams(widthInPixels, heightInPixels);
         params.gravity = Gravity.CENTER;
         button.setLayoutParams(params);
 
-        // Ajusta el padding según tus preferencias
         button.setPadding(10, 5, 10, 5);
-
-        // Ajusta el tamaño del texto según tus preferencias
         button.setTextSize(12);
-
-        // Ajusta la gravedad del texto
         button.setGravity(Gravity.CENTER);
-
-        // Establece el color del texto
-        button.setTextColor(getResources().getColor(android.R.color.white));
+        button.setTextColor(getResources().getColor(android.R.color.white));  // Establece el color del texto del botón
         return button;
-
     }
 }
