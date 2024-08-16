@@ -62,11 +62,11 @@ public class CatDetailActivity extends AppCompatActivity {
         });
 
         // Configurar el botón "ELIMINAR" para eliminar el usuario con confirmación
-        Button deleteUserButton = findViewById(R.id.deleteUserButton);
+        Button deleteUserButton = findViewById(R.id.deleteCatButton);
         deleteUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                confirmDeleteUser(catId);
+                confirmDeleteCat(catId);
             }
         });
 
@@ -95,7 +95,7 @@ public class CatDetailActivity extends AppCompatActivity {
         textView.setText(spannableString);
     }
 
-    private void confirmDeleteUser(int userId) {
+    private void confirmDeleteCat(int userId) {
         new AlertDialog.Builder(this)
                 .setTitle("Confirmar eliminación")
                 .setMessage("¿Está seguro de que desea eliminar esta categoria?")

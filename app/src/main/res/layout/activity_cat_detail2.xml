@@ -84,7 +84,7 @@
                 />
 
             <Button
-                android:id="@+id/deleteUserButton"
+                android:id="@+id/deleteCatButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
